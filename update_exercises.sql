@@ -1,13 +1,13 @@
 USE codeup_test_db;
 
-SELECT * FROM albums;
+SELECT name AS 'ALBUMS' FROM albums;
 
 UPDATE albums
 SET sales = sales * 10;
 
 SELECT * FROM albums;
 
-SELECT * FROM albums WHERE release_date < 1980;
+SELECT name AS 'Albums before 1980' FROM albums WHERE release_date < 1980 ;
 
 UPDATE albums
 SET release_date = release_date - 100
@@ -15,7 +15,7 @@ WHERE release_date < 1980;
 
 SELECT * FROM albums WHERE release_date < 1980;
 
-SELECT * FROM albums WHERE artist = 'Michael Jackson';
+SELECT name as 'Michael''s Hit Albums' FROM albums WHERE artist = 'Michael Jackson' ;
 
 UPDATE albums
 SET artist = 'Peter Jackson'

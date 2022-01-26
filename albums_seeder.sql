@@ -1,6 +1,6 @@
 USE codeup_test_db;
 
-TRUNCATE albums
+TRUNCATE albums;
 
 INSERT INTO albums (artist, name, release_date, sales, genre)
 VALUE ('Micheal Jackson', 'Thriller', 1982, 49.2, 'Pop, post-disco, funk, rock'),
