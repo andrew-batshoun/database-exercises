@@ -43,12 +43,12 @@ SELECT * FROM employees WHERE last_name LIKE '%q%' AND last_name NOT LIKE '%qu%'
 SELECT * FROM employees WHERE month(birth_date) = 12 AND day(birth_date) = 25;
 
 # Find all employees hired in the 90s and born on Christmas — 362 rows.
-SELECT * FROM employees WHERE (month(birth_date) = 12 AND day(birth_date) = 25) AND year(hire_date) between 1989 AND 2000;
+SELECT * FROM employees WHERE (month(birth_date) = 12 AND day(birth_date) = 25) AND year(hire_date) between 1990 AND 1999;
 
 # Change the query for employees hired in the 90s and born on Christmas such that the first result is the oldest employee who was hired last. It should be Khun Bernini.
 
-SELECT * FROM employees WHERE (month(birth_date) = 12 AND day(birth_date) = 25) AND year(hire_date) between 1989 AND 2000 ORDER BY birth_date ASC, hire_date DESC;
+SELECT * FROM employees WHERE (month(birth_date) = 12 AND day(birth_date) = 25) AND year(hire_date) between 1990 AND 1999 ORDER BY birth_date ASC, hire_date DESC;
 
 # For your query of employees born on Christmas and hired in the 90s, use datediff() to find how many days they have been working at the company (Hint: You might also need to use now() or curdate()).
 
-SELECT DATEDIFF(curdate(),hire_date) AS 'Days Worked' FROM employees WHERE (month(birth_date) = 12 AND day(birth_date) = 25) AND year(hire_date) between 1989 AND 2000;
+SELECT first_name, last_name, concat(DATEDIFF(curdate(),hire_date)) AS 'Days Worked' FROM employees WHERE (month(birth_date) = 12 AND day(birth_date) = 25) AND year(hire_date) between 1990 AND 1990;
